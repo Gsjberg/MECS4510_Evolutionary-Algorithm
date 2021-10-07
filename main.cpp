@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 //Function Declearation
 int randomit (int i){return rand()%i;} //Define the unary function
 void getcoordinate(string);
