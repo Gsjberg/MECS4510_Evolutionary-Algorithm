@@ -1,2 +1,3 @@
-# MECS4510_Traveling-Salesman
-The task is to find the shortest path that connects 1000 unique points and returns back to the origin. The project is programmed in C++. Multiple algorithms are appied, including Random Search, Random Mutation Hill Climber(RMHC), and Evolutionary Algorithm. 
+# MECS4510_Evolutionary-Algorithm
+# This repository consists of three projects demonstrating the implementation of Evolutionary Algorithm(EA), Genetic Programming(GP), and other classical algorithm like Random Search(RS) and Random Mutation Hill Climber(RMHC).
+# Traveling Salesman: The task is to find the shorest path connecting 1000 unique points and returning to the origin. RS, RMHC, and EA are implemented.
