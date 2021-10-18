@@ -1,6 +1,6 @@
 function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel)
     parfor i = 1:run
-        fileID = fopen(strcat('hillclimber_', num2str(i), '.csv'), 'w');
+        fileID = fopen(strcat('hillclimber_', num2str(i), '.txt'), 'w');
         current_best = inf;
         heap_collection = {};
         error_collection = [];

@@ -1,7 +1,7 @@
 function error = eror_cal(heap,data)
     fh = str2func(equation_gen(heap));
     y = fh(data(:,1));
-    error = sum(y - data(:,2)) / length(y);
+    error = sum(abs(y - data(:,2))) / length(y);
 end
 
 function equation = equation_gen(heap)

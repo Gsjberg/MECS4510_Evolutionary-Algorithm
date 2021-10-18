@@ -1,7 +1,7 @@
 function heapMu = mutation(heap, maxlevel)
     temp = heap;
     constRow = temp(2^(maxlevel-1):end);
-    mutationIndex = randi(2^maxlevel);
+    mutationIndex = randi(2^(maxlevel-1));
     % Ensure the selected node is not empty
     while isempty(constRow(mutationIndex))
         mutationIndex = randi(2^maxlevel);
