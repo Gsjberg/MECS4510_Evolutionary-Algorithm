@@ -2,7 +2,7 @@ function [] = main()
 %Set parameters
 clear
 clc
-rng(0, 'twister')
+rng('shuffle')
 operators = {'+', '-', '.*', './', 'cos', 'sin'};
 constant = {'x', 'cons'};
 data = csvread("data.csv");
