@@ -12,5 +12,7 @@ evl = 30000;
 run = 4;
 maxlevel = 4;
 %randomsearch(operators, constant, data_training, evl, run, maxlevel);
-hillclimber(operators, constant, data_training, evl, run, maxlevel);
+%hillclimber(operators, constant, data_training, evl, run, maxlevel);
+GA(operators, constant, data_training, evl, run, maxlevel);
+GA_diversity(operators, constant, data_training, data_validation, evl, run, maxlevel)
 end

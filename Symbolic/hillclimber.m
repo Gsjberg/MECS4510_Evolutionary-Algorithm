@@ -11,7 +11,6 @@ function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel
             error_collection(end+1) = new_error;
         end
         for j = 1:evl
-            rng(j)
             %Generate 10 more mutated heaps
             for n = 1:10
                 new_heap = mutation(heap_collection{n});
