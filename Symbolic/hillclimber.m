@@ -1,10 +1,11 @@
 function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel)
+    populationsize = 40;
     parfor i = 1:run
         fileID = fopen(strcat('hillclimber_', num2str(i), '.txt'), 'w');
         heap_collection = {};
         error_collection = [];
         %Generate 10 initial heaps
-        for k = 1:10
+        for k = 1:populationsize
             new_heap = heapgenerator(operators, constant, maxlevel);
             heap_collection{end+1} = new_heap;
             new_error = eror_cal(new_heap, data_training);
@@ -12,7 +13,7 @@ function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel
         end
         for j = 1:evl
             %Generate 10 more mutated heaps
-            for n = 1:10
+            for n = 1:populationsize
                 new_heap = mutation(heap_collection{n});
                 new_error = eror_cal(new_heap, data_training);
                 while ismember(new_error, error_collection)

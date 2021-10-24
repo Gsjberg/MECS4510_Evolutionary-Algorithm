@@ -1,7 +1,7 @@
 function [] = GA(operators, constant, data_training, evl, run, maxlevel)
-    populationsize = 20;
+    populationsize = 200;
     parfor i = 1:run
-        fileID = fopen(strcat('hillclimber_', num2str(i), '.txt'), 'w');
+        fileID = fopen(strcat('GA_', num2str(i), '.txt'), 'w');
         heap_collection = {};
         error_collection = [];
         %Generate 20 initial heaps, the population size can vary by
@@ -22,7 +22,7 @@ function [] = GA(operators, constant, data_training, evl, run, maxlevel)
                 parentsID = randperm(populationsize, 2);
                 parent1  = heap_collection{parentsID(1)};
                 parent2  = heap_collection{parentsID(2)};
-                [child1, child2] = crossover(parent1, parent2, maxlevel);
+                [child1, child2] = crossOver(parent1, parent2, maxlevel);
                 %Mutate the newly generated members
                 child1 = mutation(child1);
                 child2 = mutation(child2);
@@ -45,5 +45,6 @@ function [] = GA(operators, constant, data_training, evl, run, maxlevel)
             %fprintf('%d %8.4f\n', j, current_best);
             fprintf(fileID, '%d %8.4f\n', j, current_best);
         end
+        fclose(fileID);
     end
 end
