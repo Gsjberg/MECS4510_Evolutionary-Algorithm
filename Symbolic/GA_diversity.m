@@ -6,7 +6,7 @@ function [] = GA_diversity(operators, constant, data_training, data_validation, 
     % Initialization of some parameters and containers
     populationsize = 40;
     parfor i = 1:run
-        fileID = fopen(strcat('GA_diversity_', num2str(1), '.txt'), 'w');
+        fileID = fopen(strcat('GA_diversity_', num2str(i), '.txt'), 'w');
         heap_collection = cell(1, populationsize);
         error_collection = ones(1, populationsize);
         error_validation = ones(1, populationsize);
