@@ -1,6 +1,6 @@
 function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel)
     populationsize = 40;
-    parfor i = 1:run
+    %parfor i = 1:run
         fileID = fopen(strcat('hillclimber_', num2str(i), '.txt'), 'w');
         heap_collection = {};
         error_collection = [];
@@ -27,10 +27,11 @@ function [] = hillclimber(operators, constant, data_training, evl, run, maxlevel
             [~, I] = sort(temp);
             heap_collection = heap_collection(I(1:10));
             error_collection = error_collection(I(1:10));
+            diversity = std(error_collection);
             current_best = error_collection(1);
-            %fprintf('%d %8.4f\n', j, current_best);
-            fprintf(fileID, '%d %8.4f\n', j, current_best);
+            fprintf(fileID, '%8.4f\n', diversity);
+            %fprintf(fileID, '%d %8.4f\n', j, current_best);
         end
         fclose(fileID);
-    end
+    %end
 end
