@@ -5,8 +5,8 @@
 function [] = GA_diversity(operators, constant, data_training, data_validation, evl, run, maxlevel)
     % Initialization of some parameters and containers
     populationsize = 40;
-    parfor i = 1:run
-        fileID = fopen(strcat('GA_diversity_', num2str(i), '.txt'), 'w');
+    %parfor i = 1:run
+        fileID = fopen(strcat('GA_diversity_', num2str(5), '.txt'), 'w');
         heap_collection = cell(1, populationsize);
         error_collection = ones(1, populationsize);
         error_validation = ones(1, populationsize);
@@ -72,5 +72,5 @@ function [] = GA_diversity(operators, constant, data_training, data_validation, 
         end
         fclose(fileID);
         writematrix(Dotplot);
-    end
+    %end
 end
