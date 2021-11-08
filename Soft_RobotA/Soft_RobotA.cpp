@@ -32,7 +32,7 @@ double groundEnergy = 0;
 double timeStep = 0.001;
 double restoreConstant = 10000;
 double springConstant = 1000;
-double dampingConstant = 1.000;// 0.999;
+double dampingConstant = 0.999;
 double frictionCoefficient = 0; // 0.8;
 
 GLfloat worldRotation[16] = { 1,0,0,0,0,0,1,0,0,1,0,0,0,0,0,1 };
@@ -60,7 +60,7 @@ struct SPRING
 std::vector<MASS> generateCubeMasses(double mass, double length, double initialX, double initialY, double initialZ)
 {
     std::vector<MASS> cubeMasses(8);
-    cubeMasses[0] = { mass,{initialX + length / 2,initialY + length / 2,initialZ},{0,0,0},{0,0,0} };
+    cubeMasses[0] = { mass,{initialX + length / 2,initialY + length / 2,initialZ},{1,1,1},{0,0,0} };
     cubeMasses[1] = { mass,{initialX + length / 2,initialY - length / 2,initialZ},{0,0,0},{0,0,0} };
     cubeMasses[2] = { mass,{initialX - length / 2,initialY - length / 2,initialZ},{0,0,0},{0,0,0} };
     cubeMasses[3] = { mass,{initialX - length / 2,initialY + length / 2,initialZ},{0,0,0},{0,0,0} };
@@ -118,6 +118,11 @@ std::vector<SPRING> generateCubeSprings(double springConstant)
 std::vector<MASS> cubeMasses = generateCubeMasses(mass, length, 0.0, 0.0, 0.5);
 // assign values as a cube
 std::vector<SPRING> cubeSprings = generateCubeSprings(springConstant);
+
+// create a list for masses2
+std::vector<MASS> cubeMasses2 = generateCubeMasses(mass, length, 0.5, 0.5, 1.0);
+// assign values as a cube2
+std::vector<SPRING> cubeSprings2 = generateCubeSprings(springConstant);
 
 double norm(double x[], std::size_t sz)
 {
@@ -422,7 +427,7 @@ void display()
     //drawSomething();
     drawground();
     cubeUpdate(cubeMasses, cubeSprings, 0);
-
+    cubeUpdate(cubeMasses2, cubeSprings2, 0);
     //  Draw axes
     
     glColor3f(1, 1, 1);

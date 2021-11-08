@@ -1,0 +1,4 @@
+﻿  Soft_RobotA.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(127,1): warning C4005: 'CALLBACK': macro redefinition
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotA\GL\glut.h(33): message : see previous definition of 'CALLBACK'
+LINK : fatal error LNK1104: cannot open file 'glut32.lib'
