@@ -1,0 +1,7 @@
+﻿  gencrawl.cpp
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\gencrawl.h(154,1): warning C4005: 'M_PI': macro redefinition
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\gencrawl.h(21): message : see previous definition of 'M_PI'
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\gencrawl.h(226,18): warning C4018: '>': signed/unsigned mismatch
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\gencrawl.h(227,18): warning C4018: '>': signed/unsigned mismatch
+C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\gencrawl.cpp(563,33): warning C4018: '<': signed/unsigned mismatch
+  physicalworld.vcxproj -> C:\Users\jamie\Desktop\MECS4510_TS\MECS4510_Evolutionary-Algorithm\Soft_RobotB\Debug\physicalworld.exe
