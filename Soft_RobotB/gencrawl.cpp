@@ -236,7 +236,7 @@ void forceCube(int cubenum) {
         // Adding gravity to each mass
         for (int j = 0; j < mass_num; j++) {
             cube[c].cube_mass[j].f[0] = 0;
-            cube[c].cube_mass[j].f[1] = 0; // cube[c].cube_mass[j].m* constantg;
+            cube[c].cube_mass[j].f[1] = cube[c].cube_mass[j].m* constantg;
             cube[c].cube_mass[j].f[2] = -cube[c].cube_mass[j].m * constantg ;
         }
         if (T >= 1.5){
@@ -471,7 +471,7 @@ void drawCube( ) {
         std::cout << cube_mass[i].p[1] << std::endl;*/
 
     for (int c = 0; c < CUBENUM; c++) {
-       if (c == 9) {
+       //if (c == 8) {
             glColor3f(0.8, 0.8, 0.8);
             mass_num = int(cube[c].cube_mass.size());
             GLUquadric* quad;
@@ -487,7 +487,7 @@ void drawCube( ) {
             for (int i = 0; i < spring_num; i++) {
                 draw_single_spring(cube[c].cube_spring[i], c);
             }
-        }
+        //}
         /*
         if (c < 15) {
             glColor3f(1, 0, 0);
