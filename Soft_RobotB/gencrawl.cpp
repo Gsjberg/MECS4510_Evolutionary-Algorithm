@@ -471,8 +471,8 @@ void drawCube( ) {
         std::cout << cube_mass[i].p[1] << std::endl;*/
 
     for (int c = 0; c < CUBENUM; c++) {
-       //if (c == 8) {
-            glColor3f(0.8, 0.8, 0.8);
+       if (c == 13) {
+            glColor3f(0.8, 0.8, 0.2);
             mass_num = int(cube[c].cube_mass.size());
             GLUquadric* quad;
             for (int i = 0; i < mass_num; i++) {
@@ -487,7 +487,7 @@ void drawCube( ) {
             for (int i = 0; i < spring_num; i++) {
                 draw_single_spring(cube[c].cube_spring[i], c);
             }
-        //}
+        }
         /*
         if (c < 15) {
             glColor3f(1, 0, 0);
