@@ -236,7 +236,7 @@ void forceCube(int cubenum) {
         // Adding gravity to each mass
         for (int j = 0; j < mass_num; j++) {
             cube[c].cube_mass[j].f[0] = 0;
-            cube[c].cube_mass[j].f[1] = cube[c].cube_mass[j].m* constantg;
+            cube[c].cube_mass[j].f[1] = 0;// cube[c].cube_mass[j].m* constantg;
             cube[c].cube_mass[j].f[2] = -cube[c].cube_mass[j].m * constantg ;
         }
         if (T >= 1.5){
@@ -356,7 +356,7 @@ GLuint g_texture;
 void drawground()
 {
     /*
-    glColor3f(0.06078, 0.96078, 0.86274);
+    glColor3f(0.2, 1.0, 0.86);
     glBindTexture(GL_TEXTURE_2D, g_texture);
     glBegin(GL_QUADS);
     glNormal3f(0, 0, 1);
@@ -431,7 +431,7 @@ void draw_single_spring(Spring cube_spring, int c) {
         glPushMatrix();
         glMultMatrixf(worldRotation);
         glBegin(GL_LINES);
-        glColor3f(0.02 * g_count, 0.0, 1.0 - 0.02 * g_count);
+        glColor3f(0.02, 0.0, 1.0);
         
         glVertex3f(cube[c].cube_mass[m1].p[0], cube[c].cube_mass[m1].p[1], cube[c].cube_mass[m1].p[2]);
         glColor3f(0.02 * g_count, 1.0, 1.0 - 0.02 * g_count);
@@ -471,7 +471,7 @@ void drawCube( ) {
         std::cout << cube_mass[i].p[1] << std::endl;*/
 
     for (int c = 0; c < CUBENUM; c++) {
-       if (c == 13) {
+       if (c == 15) {
             glColor3f(0.8, 0.8, 0.2);
             mass_num = int(cube[c].cube_mass.size());
             GLUquadric* quad;
